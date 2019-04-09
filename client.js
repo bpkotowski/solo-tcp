@@ -7,18 +7,20 @@ const rl = readLine.createInterface({
   prompt: '> '
 });
 
-rl.prompt();
-rl.on('line', line => {
-  console.log(line);
-  rl.prompt();
-});
+// ipconfig getifaddr en0
 
 const client = net.createConnection(7890, 'local', () => {
   console.log('im connected');
     
+  rl.prompt();
+  rl.on('line', line => {
+    console.log(line);
+    rl.prompt();
+  });
 
-  client.write('hi im a client');
+//   client.write('hi im a client');
 });
 
-
-// ipconfig getifaddr en0
+client.on('data', data => {
+  console.log('data', data.toString());
+});
