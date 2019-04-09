@@ -12,8 +12,8 @@ rs.on('data', chunk => {
   body += chunk;
 });
 
-rs.on('', data => {
-  console.log('data', data);
+rs.on('end', data => {
+  console.log('data', body);
 
 });
 
