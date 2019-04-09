@@ -6,15 +6,14 @@ const rs = fs.createReadStream('./1_streams.md', {
   highWaterMark: 64 * 1028
 });
 
-let body = '';
+let body = ' ';
 
 rs.on('data', chunk => {
   body += chunk;
 });
 
 rs.on('end', data => {
-  console.log('data', body);
-
+ 
 });
 
 
