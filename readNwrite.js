@@ -13,7 +13,7 @@ rs.on('data', chunk => {
   writeStream.write(chunk);
 });
 
-rs.on('end', data => {
+rs.on('end', () => {
   writeStream.end();
 });
 

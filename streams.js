@@ -13,7 +13,7 @@ rs.on('data', chunk => {
 });
 
 rs.on('end', data => {
- 
+  return body += data;
 });
 
 
